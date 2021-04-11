@@ -47,7 +47,7 @@ class MobileMailCard extends StatelessWidget {
           ),
           Spacer(flex: 10),
           Icon(
-            Icons.flag,
+            Icons.flag_outlined,
             size: 40,
           )
         ],

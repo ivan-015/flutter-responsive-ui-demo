@@ -1,3 +1,5 @@
+import 'package:demo/layout_builder/layout_builder_page.dart';
+import 'package:demo/non_responsive/non_responsive_page.dart';
 import 'package:flutter/material.dart';
 
 import 'media_query/media_query_page.dart';
@@ -24,7 +26,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: MediaQueryPage(),
+      home: NonResponsivePage(),
     );
   }
 }
