@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
-class MobileMailCard extends StatelessWidget {
+class EmailCard extends StatelessWidget {
   final String title;
   final String contents;
-  const MobileMailCard(
+  const EmailCard(
     this.title,
     this.contents, {
     Key key,
@@ -47,7 +47,7 @@ class MobileMailCard extends StatelessWidget {
           ),
           Spacer(flex: 10),
           Icon(
-            Icons.flag,
+            Icons.flag_outlined,
             size: 40,
           )
         ],

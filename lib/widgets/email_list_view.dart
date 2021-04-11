@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-import 'mobile_mail_card.dart';
+import 'email_card.dart';
 
 class EmailListView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView.separated(
       itemBuilder: (context, i) {
-        return MobileMailCard('Item $i', 'Contents of item $i');
+        return EmailCard('Item $i', 'Contents of item $i');
       },
       separatorBuilder: (context, i) => const Divider(),
       itemCount: 20,
