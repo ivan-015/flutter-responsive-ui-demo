@@ -1,5 +1,6 @@
-import 'package:demo/pages/media_query_page.dart';
 import 'package:flutter/material.dart';
+
+import 'media_query/media_query_page.dart';
 
 void main() {
   runApp(MyApp());
