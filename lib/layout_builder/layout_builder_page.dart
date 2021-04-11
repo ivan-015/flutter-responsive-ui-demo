@@ -1,6 +1,7 @@
 import 'package:demo/widgets/email_list_view.dart';
-import 'package:demo/widgets/search_bar.dart';
 import 'package:demo/widgets/side_panel.dart';
+import 'package:demo/widgets/tablet_desktop/desktop_email_view.dart';
+import 'package:demo/widgets/tablet_desktop/tablet_desktop_title.dart';
 import 'package:flutter/material.dart';
 
 class LayoutBuilderPage extends StatefulWidget {
@@ -64,46 +65,10 @@ class _LayoutBuilderPageState extends State<LayoutBuilderPage> {
           if (childWidth < desktop) {
             return EmailListView();
           }
-          return Row(
-            children: [
-              Container(
-                width: width * 0.3,
-                child: SidePanel(),
-              ),
-              Container(
-                width: width * 0.7,
-                child: EmailListView(),
-              ),
-            ],
-          );
+          return DesktopEmailView(width: width);
         }),
       );
     });
   }
 }
 
-class TabletDesktopTitle extends StatelessWidget {
-  const TabletDesktopTitle({
-    Key key,
-    @required this.childWidth,
-  }) : super(key: key);
-
-  final double childWidth;
-
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      children: [
-        Text('E-mail App'),
-        Spacer(),
-        SizedBox(
-          width: childWidth * .75,
-          child: SearchBar(),
-        ),
-        Spacer(
-          flex: 2,
-        ),
-      ],
-    );
-  }
-}

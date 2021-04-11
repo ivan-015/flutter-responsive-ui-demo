@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
-class MobileMailCard extends StatelessWidget {
+class EmailCard extends StatelessWidget {
   final String title;
   final String contents;
-  const MobileMailCard(
+  const EmailCard(
     this.title,
     this.contents, {
     Key key,
