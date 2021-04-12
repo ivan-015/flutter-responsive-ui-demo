@@ -1,4 +1,5 @@
 import 'package:demo/screens/layout_builder/layout_builder_page.dart';
+import 'package:demo/screens/responsive_widget/responsive_widget_page.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -23,7 +24,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: LayoutBuilderPage(),
+      home: ResponsiveWidgetPage(),
     );
   }
 }

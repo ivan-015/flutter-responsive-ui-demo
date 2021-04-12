@@ -1,10 +1,5 @@
-import 'package:demo/widgets/side_panel.dart';
-import 'package:demo/widgets/tablet_desktop/desktop_email_view.dart';
-import 'package:demo/widgets/tablet_desktop/tablet_desktop_title.dart';
 import 'package:flutter/material.dart';
 import 'package:demo/constants/breakpoints.dart' as breakpoints;
-
-import 'email_list_view.dart';
 
 class ResponsiveWidgetBuilder extends StatelessWidget {
   final Widget mobileWidget;

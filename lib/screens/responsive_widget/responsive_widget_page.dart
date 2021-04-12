@@ -13,14 +13,9 @@ class ResponsiveWidgetPage extends StatefulWidget {
 class _ResponsiveWidgetPageState extends State<ResponsiveWidgetPage> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('E-mail App'),
-      ),
-      drawer: Drawer(
-        child: SidePanel(),
-      ),
-      body: EmailListView(),
+    return ResponsiveWidgetBuilder(
+      mobileWidget: MobileTabletScaffold(),
+      desktopWidget: DesktopScaffold(),
     );
   }
 }
@@ -45,34 +40,29 @@ class MobileTabletScaffold extends StatelessWidget {
 class DesktopScaffold extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    // return Scaffold(
-    //   appBar: AppBar(
-    //     title: TabletDesktopTitle(
-    //     ),
-    //     actions: [
-    //       IconButton(
-    //         icon: Icon(Icons.delete),
-    //         onPressed: () {},
-    //       ),
-    //       IconButton(
-    //         icon: Icon(Icons.settings),
-    //         onPressed: () {},
-    //       ),
-    //       IconButton(
-    //         icon: Icon(Icons.help),
-    //         onPressed: () {},
-    //       ),
-    //       SizedBox(width: 30)
-    //     ],
-    //   ),
-    //   body: LayoutBuilder(builder: (context, constraints) {
-    //     var childWidth = constraints.maxWidth;
-    //     // Mobile and Tablet
-    //     if (childWidth < desktop) {
-    //       return EmailListView();
-    //     }
-    //     return DesktopEmailView(width: width);
-    //   }),
-    // );
+    return Scaffold(
+      appBar: AppBar(
+        title: TabletDesktopTitle(),
+        actions: [
+          IconButton(
+            icon: Icon(Icons.delete),
+            onPressed: () {},
+          ),
+          IconButton(
+            icon: Icon(Icons.settings),
+            onPressed: () {},
+          ),
+          IconButton(
+            icon: Icon(Icons.help),
+            onPressed: () {},
+          ),
+          SizedBox(width: 30)
+        ],
+      ),
+      body: ResponsiveWidgetBuilder(
+        mobileWidget: EmailListView(),
+        desktopWidget: DesktopEmailView(),
+      ),
+    );
   }
 }
