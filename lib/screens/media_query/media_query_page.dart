@@ -21,16 +21,14 @@ class _MediaQueryPageState extends State<MediaQueryPage> {
               title: Text('E-mail App'),
             )
           : AppBar(
-              title: TabletDesktopTitle(
-                childWidth: width,
-              ),
+              title: TabletDesktopTitle(),
             ),
       drawer: width >= 1100
           ? null
           : Drawer(
               child: SidePanel(),
             ),
-      body: width >= 1100 ? DesktopEmailView(width: width) : EmailListView(),
+      body: width >= 1100 ? DesktopEmailView() : EmailListView(),
     );
   }
 }
