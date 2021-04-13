@@ -27,7 +27,7 @@ class _LayoutBuilderPageState extends State<LayoutBuilderPage> {
                 return Text('E-mail App');
               } else {
                 // Tablet
-                return TabletDesktopTitle(childWidth: childWidth);
+                return TabletDesktopTitle();
               }
             }),
           ),
@@ -40,9 +40,7 @@ class _LayoutBuilderPageState extends State<LayoutBuilderPage> {
       // Desktop Scaffold
       return Scaffold(
         appBar: AppBar(
-          title: TabletDesktopTitle(
-            childWidth: width,
-          ),
+          title: TabletDesktopTitle(),
           actions: [
             IconButton(
               icon: Icon(Icons.delete),
@@ -65,10 +63,9 @@ class _LayoutBuilderPageState extends State<LayoutBuilderPage> {
           if (childWidth < desktop) {
             return EmailListView();
           }
-          return DesktopEmailView(width: width);
+          return DesktopEmailView();
         }),
       );
     });
   }
 }
-

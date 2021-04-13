@@ -4,10 +4,7 @@ import 'package:flutter/material.dart';
 class TabletDesktopTitle extends StatelessWidget {
   const TabletDesktopTitle({
     Key key,
-    @required this.childWidth,
   }) : super(key: key);
-
-  final double childWidth;
 
   @override
   Widget build(BuildContext context) {
@@ -15,8 +12,8 @@ class TabletDesktopTitle extends StatelessWidget {
       children: [
         Text('E-mail App'),
         Spacer(),
-        SizedBox(
-          width: childWidth * .75,
+        Expanded(
+          flex: 8,
           child: SearchBar(),
         ),
         Spacer(
