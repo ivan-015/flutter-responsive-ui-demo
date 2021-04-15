@@ -14,21 +14,45 @@ class _ResponsiveWidgetPageState extends State<ResponsiveWidgetPage> {
   @override
   Widget build(BuildContext context) {
     return ResponsiveWidgetBuilder(
-      mobileWidget: MobileTabletScaffold(),
+      mobileWidget: MobileScaffold(),
+      tabletWidget: TabletScaffold(),
       desktopWidget: DesktopScaffold(),
     );
   }
 }
 
-class MobileTabletScaffold extends StatelessWidget {
+class MobileScaffold extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-          title: ResponsiveWidgetBuilder(
-        mobileWidget: Text('E-mail App'),
-        tabletWidget: TabletDesktopTitle(),
-      )),
+        title: Text('E-mail App'),
+        actions: [
+          IconButton(
+            icon: Icon(
+              Icons.search,
+              size: 30,
+            ),
+            onPressed: () {},
+          ),
+          SizedBox(width: 30),
+        ],
+      ),
+      drawer: Drawer(
+        child: SidePanel(),
+      ),
+      body: EmailListView(),
+    );
+  }
+}
+
+class TabletScaffold extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: TabletDesktopTitle(),
+      ),
       drawer: Drawer(
         child: SidePanel(),
       ),

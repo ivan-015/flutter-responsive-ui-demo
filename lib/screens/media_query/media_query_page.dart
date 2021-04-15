@@ -19,6 +19,16 @@ class _MediaQueryPageState extends State<MediaQueryPage> {
       appBar: width <= 750
           ? AppBar(
               title: Text('E-mail App'),
+              actions: [
+                IconButton(
+                  icon: Icon(
+                    Icons.search,
+                    size: 30,
+                  ),
+                  onPressed: () {},
+                ),
+                SizedBox(width: 30),
+              ],
             )
           : AppBar(
               title: TabletDesktopTitle(),
