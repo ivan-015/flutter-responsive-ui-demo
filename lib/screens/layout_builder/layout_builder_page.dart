@@ -16,20 +16,32 @@ class _LayoutBuilderPageState extends State<LayoutBuilderPage> {
   Widget build(BuildContext context) {
     return LayoutBuilder(builder: (context, constraints) {
       var width = constraints.maxWidth;
-      if (width < desktop) {
-        // Scaffold for mobile and tablet
+      if (width < tablet) {
+        // Scaffold for mobile
         return Scaffold(
           appBar: AppBar(
-            title: LayoutBuilder(builder: (context, constraints) {
-              var childWidth = constraints.maxWidth;
-              if (childWidth < tablet) {
-                // Mobile
-                return Text('E-mail App');
-              } else {
-                // Tablet
-                return TabletDesktopTitle();
-              }
-            }),
+            title: Text('E-mail App'),
+            actions: [
+              IconButton(
+                icon: Icon(
+                  Icons.search,
+                  size: 30,
+                ),
+                onPressed: () {},
+              ),
+              SizedBox(width: 30),
+            ],
+          ),
+          drawer: Drawer(
+            child: SidePanel(),
+          ),
+          body: EmailListView(),
+        );
+      } else if (width < desktop) {
+        // Scaffold for tablet
+        return Scaffold(
+          appBar: AppBar(
+            title: TabletDesktopTitle(),
           ),
           drawer: Drawer(
             child: SidePanel(),

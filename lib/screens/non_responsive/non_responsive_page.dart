@@ -13,6 +13,16 @@ class _NonResponsivePageState extends State<NonResponsivePage> {
     return Scaffold(
       appBar: AppBar(
         title: Text('E-mail App'),
+        actions: [
+          IconButton(
+            icon: Icon(
+              Icons.search,
+              size: 30,
+            ),
+            onPressed: () {},
+          ),
+          SizedBox(width: 30),
+        ],
       ),
       drawer: Drawer(
         child: SidePanel(),
